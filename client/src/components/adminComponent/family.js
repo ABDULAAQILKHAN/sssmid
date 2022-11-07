@@ -156,7 +156,7 @@ const handleCheck = e =>{
         item: item
     }
    /// console.log(updatedata);
-   axios.post(process.env.REACT_APP_LOCAL+'/updatemember',updatedata).then((res)=>{
+   axios.post('/updatemember',updatedata).then((res)=>{
         //alert(res.data.msg);
         //resetting all member values
         if (res.data.flag) {
@@ -209,7 +209,7 @@ const handleCheck = e =>{
                                 <button className={css.deletefambtn}onClick={()=>{
                                     let flag = window.confirm('Are you sure you want to delete the family');
                                     if (flag) {
-                                        axios.put(process.env.REACT_APP_LOCAL+"/deletefamily",family).then(res=>{setalert({msg:res.data.msg,display:'block',color:'red'})
+                                        axios.put("/deletefamily",family).then(res=>{setalert({msg:res.data.msg,display:'block',color:'red'})
                                         settimeout();
                                         nav('/admin')
                                     })
