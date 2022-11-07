@@ -1,0 +1,18 @@
+.container{
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.container>div{
+    color: black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    background-color: #ffcf00;
+background-image: linear-gradient(153deg, #ffcf00 0%, #ffffff 50%, #00ff00 100%);
+}
+.title{
+    color: white;
+}
