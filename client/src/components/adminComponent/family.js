@@ -190,7 +190,7 @@ const handleCheck = e =>{
                     id : id
                  }
                  console.log(id);
-                 axios.post(process.env.REACT_APP_LOCAL+'/deletemember',data).then(res=>{
+                 axios.post('/deletemember',data).then(res=>{
                         setalert({msg:res.data.msg,color: 'red',display: 'block'});
                         settimeout();
                     })
