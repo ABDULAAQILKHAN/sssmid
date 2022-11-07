@@ -31,7 +31,7 @@ const handleChange = (e)=>{
 }
 const handleLogin = ()=>{
     console.log(input);
-    axios.post("http://192.168.29.27:7000/login",input).then(res=>{
+    axios.post("localhost/login",input).then(res=>{
         res.data.flag?setLoginUser(res.data.fam):setalert({msg:res.data.message,color:'red',display:'block'});settimeout();
         if(res.data.fam.family[0].sssmid === 'admin'){
             setLoginUser(true);
