@@ -15,19 +15,24 @@ const Alldata = ({setfamily})=>{
     const correct = <i className="fa-solid fa-check"></i>;
 const wrong = <i className="fa-solid fa-xmark"></i>;
     useEffect(()=>{
-        fetch('/alldata').then(
+        fetch(process.env.REACT_APP_LOCAL+'/alldata').then(
             res=>res.json()
         ).then(json=>{
             setdata(json);
             //console.log(json)
             })
         },[])
-
+data.map(item=>{
+    console.log(item)
+})
 let dataFilter = data.filter(item=>{
 
-            return Object.keys(item).some((key) => item[key].toString().toLowerCase().includes(Search.toString().toLowerCase()))
+            return Object.keys(item).some((key) => [key].toString().toLowerCase().includes(Search.toString().toLowerCase()))
 
          });
+
+
+
 
     return<>
         <center>
@@ -39,7 +44,7 @@ let dataFilter = data.filter(item=>{
             dataFilter.map((item,i)=>{
                 return<>
 
-                    <h3 key={item._id+2}>{item._id === '6310bfe0de05c81980070a3a'?'Family ID: '+ item._id:""}</h3>
+                    <h3 key={item._id+2}>{item._id === '6310bfe0de05c81980070a3a'?"":'Family ID: '+ item._id}</h3>
                     {item._id === '6310bfe0de05c81980070a3a'?<></>:  <><table key={item.Id+1} className={css.table} onClick={()=>{setfamily(item);
                             nav('/admin/familypage')}}>  
         <thead>
