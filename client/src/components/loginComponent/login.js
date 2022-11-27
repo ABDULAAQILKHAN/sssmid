@@ -57,7 +57,7 @@ const handleLogin = ()=>{
                 <br />
                 <br />
                 <br />
-                <input type="text" name="password" className={css.input} placeholder="SSSM-ID" onChange={handleChange} />
+                <input type="password" name="password" className={css.input} placeholder="SSSM-ID" onChange={handleChange} />
                 <br />
                 <br />                <br />
                 <button type="submit" className={css.button}
