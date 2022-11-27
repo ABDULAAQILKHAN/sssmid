@@ -15,16 +15,14 @@ const Alldata = ({setfamily})=>{
     const correct = <i className="fa-solid fa-check"></i>;
 const wrong = <i className="fa-solid fa-xmark"></i>;
     useEffect(()=>{
-        fetch(process.env.REACT_APP_LOCAL+'/alldata').then(
+        fetch('/alldata').then(
             res=>res.json()
         ).then(json=>{
             setdata(json);
             //console.log(json)
             })
         },[])
-data.map(item=>{
-    console.log(item)
-})
+
 let dataFilter = data.filter(item=>{
 
             return Object.keys(item).some((key) => [key].toString().toLowerCase().includes(Search.toString().toLowerCase()))
