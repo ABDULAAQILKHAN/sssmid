@@ -326,7 +326,6 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 else {
-    server.use(express.static("client/build"));
     server.get('/*', function (req, res) {
 
         //res.send("<h1>hellow world</h1>");
