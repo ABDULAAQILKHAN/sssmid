@@ -15,7 +15,7 @@ function App() {
 
   useEffect(()=>{
    
-
+console.log("admins"+loginuser)
   },[loginuser])
   return (
   

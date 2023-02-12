@@ -8,7 +8,7 @@ const Insigts = ()=>{
     const [female,setfemale] = useState();
     const [other,setother] = useState();
     useEffect(()=>{
-        fetch('/insigts').then(
+        fetch(process.env.REACT_APP_LOCAL+'/insigts').then(
             res=>res.json()
         ).then(json=>{
             setdata(json);

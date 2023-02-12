@@ -15,7 +15,6 @@ const Comp = ()=>{
         <Insigts/>
     </center>
         {flag? <><button className={css.btn} onClick={()=>{setflag(false)}}>Remove</button><br /><Form port='/newdata'/></>: <button className={css.btn} onClick={()=>{setflag(true)}}>Add</button>}
-
     </>
 }
 
