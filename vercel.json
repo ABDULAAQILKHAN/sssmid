@@ -2,9 +2,9 @@
     "version": 2,
     "builds":[
     {
-        "buildCommand": "next build"
-      }
-    
+    "src": "./server.js",
+    "use": "@vercel/node"
+    }
     ],
     "routes": [{"handle": "filesystem"},
     {
