@@ -290,7 +290,7 @@ server.post("/deletemember",(req,res)=>{
     }
 });
 })
-server.POST("/login",(req,res)=>{
+server.post("/login",(req,res)=>{
     const {sssmid, password} = req.body;
     console.log(req.body)
     members.findOne({'family.sssmid': sssmid},(err,fam)=>{

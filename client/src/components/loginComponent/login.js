@@ -32,7 +32,7 @@ const handleChange = (e)=>{
 const handleLogin = ()=>{
     console.log(input);
     
-    axios.POST(process.env.REACT_APP_ONLINE+'/login',input).then(res=>{
+    axios.post(process.env.REACT_APP_ONLINE+'/login',input).then(res=>{
         res.data.flag?setLoginUser(res.data.fam):setalert({msg:res.data.message,color:'red',display:'block'});settimeout();
         if(res.data.fam.family[0].sssmid === 'admin'){
             setLoginUser(true);
