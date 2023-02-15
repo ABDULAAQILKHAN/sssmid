@@ -15,7 +15,7 @@ const Alldata = ({setfamily})=>{
     const correct = <i className="fa-solid fa-check"></i>;
 const wrong = <i className="fa-solid fa-xmark"></i>;
     useEffect(()=>{
-        fetch('/alldata').then(
+        fetch(process.env.REACT_APP_ONLINE+'/alldata').then(
             res=>res.json()
         ).then(json=>{
             setdata(json);

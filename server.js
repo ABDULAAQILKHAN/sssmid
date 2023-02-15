@@ -16,7 +16,7 @@ server.use(express.urlencoded({
     extended: true
 }));
 
-mongoose.connect('mongodb+srv://sssmid:sssmid@sssmid.kgvk0.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://sssmid:sssmid@sssmid.kgvk0.mongodb.net/?restryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedtopology: true
 },()=>{
@@ -290,7 +290,7 @@ server.post("/deletemember",(req,res)=>{
     }
 });
 })
-server.post("/login",(req,res)=>{
+server.get("/login",(req,res)=>{
     const {sssmid, password} = req.body;
     console.log(req.body)
     members.findOne({'family.sssmid': sssmid},(err,fam)=>{
