@@ -20,7 +20,7 @@ console.log("admins"+loginuser)
   return (
   
 <>
-<BrowserRouter >
+<BrowserRouter basename="/">
 
 <Routes>
  <Route exact path="/" element={<Login setLoginUser={setLoginUser}/>}></Route>
