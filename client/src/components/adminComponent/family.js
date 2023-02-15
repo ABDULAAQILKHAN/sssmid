@@ -156,7 +156,7 @@ const handleCheck = e =>{
         item: item
     }
    /// console.log(updatedata);
-   axios.post(process.env.REACT_APP_LOCAL+'/updatemember',updatedata).then((res)=>{
+   axios.post('/updatemember',updatedata).then((res)=>{
         //alert(res.data.msg);
         //resetting all member values
         if (res.data.flag) {
@@ -190,7 +190,7 @@ const handleCheck = e =>{
                     id : id
                  }
                  console.log(id);
-                 axios.post(process.env.REACT_APP_LOCAL+'/deletemember',data).then(res=>{
+                 axios.post('/deletemember',data).then(res=>{
                         setalert({msg:res.data.msg,color: 'red',display: 'block'});
                         settimeout();
                     })
@@ -209,7 +209,7 @@ const handleCheck = e =>{
                                 <button className={css.deletefambtn}onClick={()=>{
                                     let flag = window.confirm('Are you sure you want to delete the family');
                                     if (flag) {
-                                        axios.put(process.env.REACT_APP_LOCAL+"/deletefamily",family).then(res=>{setalert({msg:res.data.msg,display:'block',color:'red'})
+                                        axios.put("/deletefamily",family).then(res=>{setalert({msg:res.data.msg,display:'block',color:'red'})
                                         settimeout();
                                         nav('/admin')
                                     })
@@ -223,7 +223,7 @@ const handleCheck = e =>{
 
         </div>
         <br />
-        {flag? <><button onClick={()=>{setflag(false)}}>Remove Form</button><br /><Form port="process.env.REACT_APP_LOCAL+/familypage" id={id}/></>: <button className={css.btn} onClick={()=>{setflag(true)}}>Add Member</button>}
+        {flag? <><button onClick={()=>{setflag(false)}}>Remove Form</button><br /><Form port="/familypage" id={id}/></>: <button className={css.btn} onClick={()=>{setflag(true)}}>Add Member</button>}
         </div>
     </>
 }
