@@ -10,19 +10,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log('directory-name 👉️', __dirname);
 const server = express();
-server.use(cors());
-server.use(express.json());
+server.use(cors({
+    origin: "*",
+    methods: ["GET","POST"]
+}));
+server.use(express.json()); 
 server.use(express.urlencoded({
     extended: true
 }));
 
-mongoose.connect('mongodb+srv://sssmid:sssmid@sssmid.kgvk0.mongodb.net/?restryWrites=true&w=majority',{
-    useNewUrlParser: true,
-    useUnifiedtopology: true
-},()=>{
-    console.log("DB connected");
-})
 
+mongoose.connect('mongodb+srv://sssmid:sssmid@sssmid.kgvk0.mongodb.net/?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
+    useUnifiedtopology: true,
+    strictQuery:false
+},(done,err)=>{
+    done?console.log("DB connected"):console.log('err')
+})
+//mongoose.set('strictQuery', false)
 
 const dataSchema = new mongoose.Schema({
     family: []
