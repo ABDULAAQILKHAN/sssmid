@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 console.log('directory-name 👉️', __dirname);
 const server = express();
 server.use(cors({
-    origin: "http://localhost:7000",
+    origin: "http://localhost:3000",
     methods: ["get","post"]
 }));
 server.use(express.json()); 
