@@ -10,10 +10,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log('directory-name 👉️', __dirname);
 const server = express();
-server.use(cors({
-    origin: "http://localhost:3000",
-    methods: ["get","post"]
-}));
+const corsOptions = {
+    origin: ["http://localhost:3000","https://sssmid-api.vercel.app",]
+      credentials: true, //access-control-allow-credentials:true
+      optionSuccessStatus: 200,
+}
+server.use(cors(corsOptions));
 server.use(express.json()); 
 server.use(express.urlencoded({
     extended: true
